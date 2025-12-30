@@ -54,22 +54,11 @@ export class ModPlayer {
 
   private async initWorklet(): Promise<void> {
     try {
-      // Load worklet module - Vite handles .ts files in dev, need ?url for production
-      await this.audioContext.audioWorklet.addModule(
-        new URL('./mod-worklet-processor.ts', import.meta.url)
-      );
+      // Load worklet from public folder (works in both dev and production)
+      await this.audioContext.audioWorklet.addModule('/mod-worklet-processor.js');
       this.workletReady = true;
     } catch (err) {
       console.error('Failed to load AudioWorklet:', err);
-      // Fallback: try without TypeScript extension
-      try {
-        await this.audioContext.audioWorklet.addModule(
-          new URL('./mod-worklet-processor.js', import.meta.url)
-        );
-        this.workletReady = true;
-      } catch (err2) {
-        console.error('Fallback also failed:', err2);
-      }
     }
   }
 

@@ -129,7 +129,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center">
+  <div class="min-h-screen flex flex-col items-center justify-center gap-4 py-4">
     <div
       class=" w-full max-h-[600px] min-h-[600px] max-w-[704px] min-w-[704px] bg-[#888] border-2 border-t-gray-300 border-l-white border-r-[#555] border-b-[#555]"
       @dragover="onDragOver" @drop="onDrop">
@@ -361,6 +361,17 @@ onUnmounted(() => {
       <!-- Hidden file input -->
       <input ref="fileInput" type="file" accept=".mod" class="hidden"
         @change="(e) => { const f = (e.target as HTMLInputElement).files?.[0]; if (f) loadFile(f); }" />
+    </div>
+    <!-- Instructions -->
+    <div class="max-w-[704px] text-sm text-gray-400 no-shadow px-2">
+      <p class="font-bold text-yellow-400 mb-2">Work in Progress</p>
+      <p class="mb-2">Most buttons are not functional yet. To play a MOD file:</p>
+      <ol class="list-decimal list-inside space-y-1 mb-2">
+        <li>Click <strong>DISK OP.</strong> to select a .MOD file</li>
+        <li>Click <strong>PLAY</strong> to start playback</li>
+        <li>Click <strong>STOP</strong> to stop</li>
+      </ol>
+      <p class="text-gray-500">You can also drag and drop a .MOD file onto the player.</p>
     </div>
   </div>
   <div v-if="0"
