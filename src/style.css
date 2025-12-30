@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* ProTracker 2.3D Clone - Authentic Amiga look */
+
+@font-face {
+  font-family: 'ProTracker';
+  src: url('/fonts/protracker.woff2') format('woff2');
+  ascent-override: 80%;
+  descent-override: 20%;
+}
+
+body {
+  font-family: 'ProTracker', 'Monaco', 'Consolas', monospace;
+  color: #000000;
+  text-shadow: 2px 2px 0 #555;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-shadow {
+  text-shadow: none;
+}
+
+/* Amiga 3D button styles */
+.raised {
+  background-color: #888;
+  border: 2px solid;
+  border-color: white white #555 #555;
+  border-top-color: #BBBBBB;
+  border-left-color: #BBBBBB;
+  border-right-color: #555;
+  border-bottom-color: #555;
+}
+
+.inset {
+  background-color: #888;
+  border: 2px solid;
+  border-top-color: #555;
+  border-left-color: #555;
+  border-right-color: #BBBBBB;
+  border-bottom-color: #BBBBBB;
+}
+.raised-no-bottom {
+  background-color: #888;
+  border: 2px solid;
+  border-top-color: #BBBBBB;
+  border-left-color: #BBBBBB;
+  border-right-color: #555;
+  border-bottom: none;
+}
+
+.raised-no-top {
+  background-color: #888;
+  border: 2px solid;
+  border-top-color: #BBBBBB;
+  border-left-color: #BBBBBB;
+  border-right-color: #555;
+  border-bottom-color: #555;
+  border-top: none;
+}
+
+.raised-no-top-bottom {
+  background-color: #888;
+  border: 2px solid;
+  border-top-color: #BBBBBB;
+  border-left-color: #BBBBBB;
+  border-right-color: #555;
+  border-bottom-color: #555;
+  border-top: none;
+  border-bottom: none;
+}
